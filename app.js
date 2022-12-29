@@ -5,7 +5,7 @@ let currentValue = '';
 
 document.addEventListener("DOMContentLoaded", function() {
     let allClear = document.querySelector('.btn-ac');
-    let clear = document.querySelector('.clear');
+    let clearBtn = document.querySelector('.clear');
     let equal = document.querySelector('.btn-equal');
 
     let operators = document.querySelectorAll('.operator');
@@ -35,8 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
         previousOperand.textContent = previousValue;
     })
 
-    clear.addEventListener('click', function() {
+    clearBtn.addEventListener('click', function() {
         currentValue = currentValue.toString().slice(0, -1);
+        currentOperand.textContent = currentValue;
+        console.log(currentOperand)
     })
 
     equal.addEventListener('click', function() {
@@ -48,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     decimal.addEventListener('click', function() {
         addDecimal();
     })
+
 })
 
 function takeNum(num){
@@ -72,9 +75,9 @@ function calculate() {
         previousValue -= currentValue
     } else if (operator === "÷") {
         previousValue /= currentValue;
-    } else {
-        Math.round((previousValue / currentValue) * 100);
-    } 
+    } else if(operator === "x") {
+        previousValue *= currentValue
+    }
     console.log(previousValue)
     previousValue = roundNum(previousValue)
     previousValue = previousValue.toString();

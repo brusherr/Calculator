@@ -4,16 +4,14 @@
 [+] Add HTML
 [+] Add Styling 
 [+] Add JavaScript
+[+] Fix C button (clear)
 
 
 
 <!-- Doesn't work  -->
-[x] Button C doesn't work;
 [x] Button % doesn't work properly;
 
 
 <!-- TO DO -->
 
 [-] Fix C button.
-[-] Fix % button.
-[-] ADD Clear button.
